@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>substitile html</title>
+	<style>
+		body {
+			background-image: url(bg.jpg);
+			background-size: 100%;
+		}
+		</style>
+</head>
+<body align="center">
+	<h1>Video Substitle html</h1><br>
+		<button onclick="playVid()" type="button">Play Video</button>
+		<button onclick="pauseVid()" type="button">Pause Video</button>
+		<button onclick="durationVid()" type="button">Video Duration</button>
+		<button onclick="enableControls()" type="button">Enable Control</button>
+		<button onclick="disableControls()" type="button">Disable Control</button>
+		<button onclick="checkControls()" type="button">Check controls Status</button><br>
+		<video id="myvideo" width="320" height="240">
+			<source src="vidio.mp4" type="video/mp4">
+			<track src="subt.vtt" kind="subtitles" srclang="id" label="Indonesia">
+		</video>
+    </body>
+    <script>
+        var vid = document.getElementById("myvideo");
+        function playVid(){
+            vid.play();
+            vid.loop = true;
+            }
+        function durationVid(){
+            alert(vid.duration);
+        }
+        function pauseVid(){
+            vid.pause();
+            }
+        function enableControls(){
+            vid.controls = true;
+            vid.load();
+        }
+        function disableControls(){
+            vid.controls = false;
+            vid.load();
+        }
+        function checkControls(){
+            alert(vid.controls);
+        }
+        </script>
+</body>
+</html>
